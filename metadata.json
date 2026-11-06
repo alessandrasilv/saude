@@ -1,0 +1,6 @@
+{
+  "name": "Saúde para Todos",
+  "description": "Sistema acolhedor e acessível de agendamento de consultas médicas em Unidades Básicas de Saúde (UBS) do SUS, com suporte a pessoas disléxicas, daltônicas, idosos e total conformidade com a LGPD.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}

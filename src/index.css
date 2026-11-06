@@ -1,0 +1,82 @@
+@import "tailwindcss";
+@custom-variant dark (&:where(.dark, .dark *));
+
+@layer base {
+  :root {
+    --font-sans: 'Plus Jakarta Sans', system-ui, -apple-system, sans-serif;
+    --font-dyslexic: 'Lexend', 'Comic Sans MS', sans-serif;
+  }
+}
+
+/* Dyslexia-friendly typography mode */
+.dyslexia-mode {
+  font-family: var(--font-dyslexic) !important;
+  letter-spacing: 0.05em !important;
+  word-spacing: 0.1em !important;
+  line-height: 1.8 !important;
+}
+
+.dyslexia-mode p,
+.dyslexia-mode span,
+.dyslexia-mode label,
+.dyslexia-mode button,
+.dyslexia-mode input,
+.dyslexia-mode select,
+.dyslexia-mode h1,
+.dyslexia-mode h2,
+.dyslexia-mode h3,
+.dyslexia-mode h4 {
+  letter-spacing: 0.04em !important;
+  line-height: 1.75 !important;
+}
+
+/* Colorblind Palettes: Daltonismo */
+/* 1. Protanopia / Deuteranopia (Vermelho/Verde): usa azul cobalto e amarelo/ouro seguros */
+.colorblind-protan-deutan {
+  --color-primary: #0284c7;
+  --color-primary-dark: #0369a1;
+  --color-accent: #d97706;
+  --color-danger: #ea580c;
+  --color-success: #0284c7;
+}
+
+/* 2. Tritanopia (Azul/Amarelo): usa azul petróleo, ciano e magenta/vermelho vivo */
+.colorblind-tritan {
+  --color-primary: #0f766e;
+  --color-primary-dark: #115e59;
+  --color-accent: #e11d48;
+  --color-danger: #be123c;
+  --color-success: #0f766e;
+}
+
+/* 3. Alto Contraste (WCAG AAA) */
+.high-contrast-mode {
+  filter: contrast(125%);
+}
+
+.high-contrast-mode.dark {
+  background-color: #000000 !important;
+  color: #ffffff !important;
+}
+
+.high-contrast-mode.dark .bg-slate-900,
+.high-contrast-mode.dark .bg-slate-800 {
+  background-color: #0a0a0a !important;
+  border-color: #ffffff !important;
+}
+
+/* Reading ruler line for dyslexia and focus */
+.reading-ruler {
+  position: fixed;
+  left: 0;
+  width: 100vw;
+  height: 38px;
+  background-color: rgba(254, 240, 138, 0.28);
+  border-top: 2px solid #ca8a04;
+  border-bottom: 2px solid #ca8a04;
+  pointer-events: none;
+  z-index: 9999;
+  transform: translateY(-50%);
+  box-shadow: 0 0 0 9999px rgba(0, 0, 0, 0.08);
+}
+
